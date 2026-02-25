@@ -18,3 +18,7 @@ INSERT INTO educations (degree, institution, start_date, end_date, description, 
 INSERT INTO experiences (job_title, company_name, start_date, end_date, description, personal_info_id) VALUES
 ('Desarrollador Full Stack Senior', 'Tech Solutions S.A.', '2022-01-01', NULL, 'Desarrollo y mantenimiento de aplicaciones empresariales. Liderazgo técnico de equipo de 3 personas.', 1),
 ('Desarrollador Backend Junior', 'Innovatech Labs', '2020-09-01', '2021-12-31', 'Participación en el desarrollo de APIs RESTful y optimización de bases de datos.', 1);
+
+INSERT INTO projects (title, description, image_url, project_url, personal_info_id) VALUES
+('Proyecto 1', 'Descripción del proyecto 1', 'img/projects/project1.jpg', 'https://github.com/juanperez/project1', 1),
+('Proyecto 2', 'Descripción del proyecto 2', 'img/projects/project2.jpg', 'https://github.com/juanperez/project2', 1);

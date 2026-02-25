@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body class="bg-gray-900 text-gray-100 font-sans min-h-screen p-8">
+    <div class="max-w-7xl mx-auto">
+        <h2 class="text-4xl font-bold mb-12 text-center border-b-2 border-gray-700 py-4 text-white">Lista de Proyectos
+        </h2>
+
+        <div class="bg-gray-800 rounded-xl shadow-2xl overflow-hidden border border-gray-700">
+            <div class="flex justify-end p-4 border-b border-gray-700 bg-gray-800">
+                <a class="inline-flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-lg transition-colors duration-200"
+                    th:href="@{/projects/new-project}">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                    </svg>
+                    Añadir Nuevo Proyecto
+                </a>
+            </div>
+
+            <div class="overflow-x-auto">
+                <table class="w-full text-sm text-left text-gray-300">
+                    <thead class="text-xs text-gray-400 uppercase bg-gray-900/50">
+                        <tr>
+                            <th scope="col" class="px-6 py-4 font-semibold tracking-wider">Imagen</th>
+                            <th scope="col" class="px-6 py-4 font-semibold tracking-wider">Título</th>
+                            <th scope="col" class="px-6 py-4 font-semibold tracking-wider">Descripción</th>
+                            <th scope="col" class="px-6 py-4 font-semibold tracking-wider">URL del Proyecto</th>
+                            <th scope="col" class="px-6 py-4 font-semibold tracking-wider text-center">ID INFO. PER.
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-700 bg-gray-800">
+                        <tr th:each="project : ${projects}"
+                            class="hover:bg-gray-750 transition-colors duration-150 group">
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <div
+                                    class="w-20 h-20 rounded-lg overflow-hidden border border-gray-600 group-hover:border-blue-500 transition-colors">
+                                    <img th:if="${project.imageUrl != null and !project.imageUrl.isEmpty()}"
+                                        th:src="@{'/' + ${project.imageUrl}}" alt="Project image"
+                                        class="w-full h-full object-cover">
+                                    <div th:unless="${project.imageUrl != null and !project.imageUrl.isEmpty()}"
+                                        class="w-full h-full bg-gray-700 flex items-center justify-center">
+                                        <svg class="w-8 h-8 text-gray-500" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 font-medium text-white whitespace-nowrap" th:text="${project.title}">
+                            </td>
+                            <td class="px-6 py-4">
+                                <p class="text-gray-400 line-clamp-2 max-w-xs" th:text="${project.description}"></p>
+                            </td>
+                            <td class="px-6 py-4">
+                                <a th:if="${project.projectUrl != null and !project.projectUrl.isEmpty()}"
+                                    th:href="${project.projectUrl}" target="_blank"
+                                    class="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors">
+                                    Link Externo
+                                    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14">
+                                        </path>
+                                    </svg>
+                                </a>
+                                <span th:unless="${project.projectUrl != null and !project.projectUrl.isEmpty()}"
+                                    class="text-gray-500 italic">No disponible</span>
+                            </td>
+                            <td class="px-6 py-4 text-center">
+                                <span
+                                    class="bg-gray-700 text-gray-300 text-xs font-medium px-2.5 py-1 rounded-full border border-gray-600"
+                                    th:text="${project.personalInfoId}"></span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

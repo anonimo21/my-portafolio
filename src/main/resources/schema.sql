@@ -1,8 +1,8 @@
 DROP TABLE IF EXISTS experiences;
 DROP TABLE IF EXISTS educations;
 DROP TABLE IF EXISTS skills;
+DROP TABLE IF EXISTS projects;
 DROP TABLE IF EXISTS personal_info;
-
 CREATE TABLE personal_info (
     id SERIAL PRIMARY KEY,
     first_name VARCHAR(100) NOT NULL,
@@ -16,19 +16,14 @@ CREATE TABLE personal_info (
     linkedin_url VARCHAR(500),
     github_url VARCHAR(500)
 );
-
 CREATE TABLE skills (
     id SERIAL PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
     level_percentage INT,
     icon_class VARCHAR(100),
     personal_info_id BIGINT NOT NULL,
-    CONSTRAINT fk_skill_personal_info
-        FOREIGN KEY (personal_info_id)
-        REFERENCES personal_info (id)
-        ON DELETE CASCADE
+    CONSTRAINT fk_skill_personal_info FOREIGN KEY (personal_info_id) REFERENCES personal_info (id) ON DELETE CASCADE
 );
-
 CREATE TABLE educations (
     id SERIAL PRIMARY KEY,
     degree VARCHAR(255) NOT NULL,
@@ -37,12 +32,8 @@ CREATE TABLE educations (
     end_date DATE,
     description TEXT,
     personal_info_id BIGINT NOT NULL,
-    CONSTRAINT fk_education_personal_info
-        FOREIGN KEY (personal_info_id)
-        REFERENCES personal_info (id)
-        ON DELETE CASCADE
+    CONSTRAINT fk_education_personal_info FOREIGN KEY (personal_info_id) REFERENCES personal_info (id) ON DELETE CASCADE
 );
-
 CREATE TABLE experiences (
     id SERIAL PRIMARY KEY,
     job_title VARCHAR(255) NOT NULL,
@@ -51,8 +42,14 @@ CREATE TABLE experiences (
     end_date DATE,
     description TEXT,
     personal_info_id BIGINT NOT NULL,
-    CONSTRAINT fk_experience_personal_info
-        FOREIGN KEY (personal_info_id)
-        REFERENCES personal_info (id)
-        ON DELETE CASCADE
+    CONSTRAINT fk_experience_personal_info FOREIGN KEY (personal_info_id) REFERENCES personal_info (id) ON DELETE CASCADE
+);
+CREATE TABLE projects (
+    id SERIAL PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    description TEXT,
+    image_url VARCHAR(500),
+    project_url VARCHAR(500),
+    personal_info_id INT NOT NULL,
+    FOREIGN KEY (personal_info_id) REFERENCES personal_info (id)
 );

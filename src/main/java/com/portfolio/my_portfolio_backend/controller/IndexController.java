@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import com.portfolio.my_portfolio_backend.service.IEducationService;
 import com.portfolio.my_portfolio_backend.service.IExperienceService;
 import com.portfolio.my_portfolio_backend.service.IPersonalInfoService;
+import com.portfolio.my_portfolio_backend.service.IProjectService;
 import com.portfolio.my_portfolio_backend.service.ISkillService;
 
 import lombok.RequiredArgsConstructor;
@@ -19,13 +20,15 @@ public class IndexController {
     private final IEducationService educationService;
     private final ISkillService skillService;
     private final IExperienceService experienceService;
-    
+    private final IProjectService projectService;
+
     @GetMapping("/")
     public String showIndex(Model model) {
         model.addAttribute("personalInfo", personalInfoService.findAll());
         model.addAttribute("experience", experienceService.findAll());
         model.addAttribute("education", educationService.findAll());
         model.addAttribute("skills", skillService.findAll());
+        model.addAttribute("projects", projectService.findAll());
         return "index";
     }
 
