@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section th:fragment="inicio" id="inicio" class="h-screen flex items-center justify-center relative overflow-hidden pt-20">
+
+        <div class="absolute inset-0 opacity-20">
+            <div
+                class="absolute top-20 left-10 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl animate-pulse">
+            </div>
+            <div
+                class="absolute top-40 right-10 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl animate-pulse delay-2000">
+            </div>
+        </div>
+
+        <div class="relative text-center z-10 max-w-3xl mx-auto px-6">
+            <div class="mb-6">
+                <img src="img/foto.jpeg" alt="Foto de perfil"
+                    class="w-32 h-32 rounded-full mx-auto border-4 border-blue-400 shadow-lg hover:scale-110 transition transform">
+            </div>
+            <h1
+                class="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-cyan-400 to-purple-400 bg-clip-text text-transparent">
+                Bienvenido a Mi Portafolio
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-300 mb-8">
+                Desarrollador Full Stack | Spring Boot | Angular | JavaScript
+            </p>
+            <div class="flex gap-4 justify-center flex-wrap">
+                <a href="#proyectos"
+                    class="px-8 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg font-semibold transition transform hover:scale-105">
+                    Ver Mis Proyectos
+                </a>
+                <a href="#contacto"
+                    class="px-8 py-3 border-2 border-blue-400 hover:bg-blue-400/10 rounded-lg font-semibold transition">
+                    Contáctame
+                </a>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

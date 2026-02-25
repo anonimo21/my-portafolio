@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portafolio Profesional</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-gray-100 scroll-smooth">
+
+    <header th:fragment="header">
+        <!-- Navbar -->
+        <nav class="fixed top-0 w-full bg-gray-900/95 backdrop-blur-sm border-b border-gray-700 z-50">
+            <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+                <div
+                    class="text-2xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+                    Eder
+                </div>
+                <ul class="hidden md:flex space-x-8">
+                    <li><a href="#inicio" class="hover:text-blue-400 transition">Inicio</a></li>
+                    <li><a href="#personal-info" class="hover:text-blue-400 transition">Sobre mí</a></li>
+                    <li><a href="#educacion" class="hover:text-blue-400 transition">Educación</a></li>
+                    <li><a href="#skills" class="hover:text-blue-400 transition">Habilidades</a></li>
+                    <li><a href="#experiencia" class="hover:text-blue-400 transition">Experiencia</a></li>
+                    <li><a href="#proyectos" class="hover:text-blue-400 transition">Proyectos</a></li>
+                    <li><a href="#contacto" class="hover:text-blue-400 transition">Contacto</a></li>
+                </ul>
+
+                <button class="md:hidden text-gray-300">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+</body>
+
+</html>

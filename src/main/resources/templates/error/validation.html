@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="validation-errors max-w-2xl mx-auto mt-10 p-6 bg-white rounded-lg shadow-md">
+        <h1 class="text-xl font-bold text-red-600">Errores de validación:</h1>
+        <p th:text="${message}"></p>
+        <ul class="list-disc pl-5">
+            <li class="text-red-500" th:each="error : ${errors}" th:text="${error.defaultMessage}"></li>
+        </ul>
+        <a href="/form" class="text-blue-500 hover:underline">Volver al inicio</a>
+    </div>
+</body>
+</html>

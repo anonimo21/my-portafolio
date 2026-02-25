@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <section th:fragment="education" id="educacion" class="py-20 px-6 bg-gray-800/50">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold mb-12 text-center border-b-2 border-gray-700 py-4">Educación</h2>
+            <div class="space-y-8">
+                <div th:each="edu : ${education}" class="bg-gray-800 p-6 rounded-xl border-l-4 border-blue-400 hover:shadow-xl transition">
+                    <h3 class="text-xl font-bold mb-2" th:text="${edu.degree}"></h3>
+                    <p class="text-gray-400 mb-3" th:text="${edu.institution}"></p>
+                    <p class="text-gray-300" th:text="${edu.startDate.year} + ' - ' + ${edu.endDate.year}"></p>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

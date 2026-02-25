@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <section th:fragment="personal-info" id="personal-info" class="py-20 px-6">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold mb-12 text-center border-b-2 border-gray-700 py-4">Sobre Mí</h2>
+            <div th:each="personalInfo : ${personalInfo}" class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <img src="/img/fullstack-img.jpg" alt="Sobre mí" class="rounded-xl shadow-2xl">
+                </div>
+                <div>
+                    <div>
+                        <p class="text-lg text-gray-300 mb-6 leading-relaxed"
+                            th:text="${personalInfo.profileDescription}"></p>
+                    </div>
+                    <div class="mt-8">
+                        <h3 class="text-2xl font-bold mb-4">Datos Personales</h3>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <i class="fas fa-user text-blue-500"></i>
+                                <p class="text-gray-400">Nombre:</p>
+                                <p class="text-white font-medium" th:text="${personalInfo.firstName}"></p>
+                            </div>
+                            <div>
+                                <i class="fas fa-user text-blue-500"></i>
+                                <p class="text-gray-400">Apellido:</p>
+                                <p class="text-white font-medium" th:text="${personalInfo.lastName}"></p>
+                            </div>
+                            <div>
+                                <i class="fas fa-user text-blue-500"></i>
+                                <p class="text-gray-400">Titulo:</p>
+                                <p class="text-white font-medium" th:text="${personalInfo.title}"></p>
+                            </div>
+                            <div>
+                                <i class="fas fa-envelope text-blue-500"></i>
+                                <p class="text-gray-400">Email:</p>
+                                <p class="text-white font-medium" th:text="${personalInfo.email}"></p>
+                            </div>
+                            <div>
+                                <i class="fas fa-phone text-blue-500"></i>
+                                <p class="text-gray-400">Teléfono:</p>
+                                <p class="text-white font-medium" th:text="${personalInfo.phone}"></p>
+                            </div>
+                            <div>
+                                <i class="fas fa-clock text-blue-500"></i>
+                                <p class="text-gray-400">Años de experiencia:</p>
+                                <p class="text-white font-medium" th:text="${personalInfo.yearsOfExperience}"></p>
+                            </div>
+                            <div>
+                                <i class="fab fa-linkedin-in text-blue-500"></i>
+                                <p class="text-gray-400">Linkedin URl:</p>
+                                <a th:href="${personalInfo.linkedinUrl}" th:text="${personalInfo.linkedinUrl}"></a>
+                            </div>
+                            <div>
+                                <i class="fab fa-github text-gray-500"></i>
+                                <p class="text-gray-400">Github URl:</p>
+                                <a th:href="${personalInfo.githubUrl}" th:text="${personalInfo.githubUrl}"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

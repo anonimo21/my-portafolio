@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portafolio Profesional</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Usamos Simple Icons CDN para obtener iconos de tecnologías:
+         Ejemplo: https://cdn.simpleicons.org/react/61DAFB -->
+    <style>
+        .tech-icon {
+            width: 18px;
+            height: 18px;
+            display: inline-block;
+        }
+
+        .tech-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: .5rem;
+        }
+    </style>
+</head>
+
+<body class="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-gray-100 scroll-smooth">
+
+    <!-- Header -->
+    <div th:replace="fragments/header :: header">
+    </div>
+
+    <main>
+
+        <!-- Inicio Section -->
+        <div th:replace="sections/inicio-section :: inicio">
+        </div>
+
+        <!-- Sobre Mí / Personal Info -->
+        <div th:replace="sections/personal-info-section :: personal-info">
+        </div>
+
+        <!-- Habilidades -->
+        <div th:replace="sections/skills-section :: skills">
+        </div>
+
+        <!-- Experiencia -->
+        <div th:replace="sections/experience-section :: experience">
+        </div>
+
+        <!-- Educación -->
+        <div th:replace="sections/education-section :: education">
+        </div>
+
+        <!-- Proyectos -->
+        <div th:replace="sections/projects-section :: projects">
+        </div>
+
+        <!-- Contacto -->
+        <div th:replace="sections/contact-section :: contact">
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <div th:replace="fragments/footer :: footer">
+    </div>
+
+</body>
+
+</html>

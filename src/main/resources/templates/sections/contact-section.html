@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <section th:fragment="contact" id="contacto" class="py-20 px-6 bg-gray-800/50">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-4xl font-bold mb-12 text-center border-b-2 border-gray-700 py-4">Contacto</h2>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-bold mb-6">Ponte en contacto</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <span class="text-blue-400 mt-1"><i class="fas fa-envelope text-2xl"></i></span>
+                            <div>
+                                <p class="font-semibold">Email</p>
+                                <a href="mailto:gabriel@example.com"
+                                    class="text-gray-400 hover:text-blue-400">gabriel@example.com</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <span class="text-blue-400 mt-1"><i class="fas fa-phone text-2xl"></i></span>
+                            <div>
+                                <p class="font-semibold">Teléfono</p>
+                                <a href="tel:+34123456789" class="text-gray-400 hover:text-blue-400">+34 123 456 789</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <span class="text-blue-400 mt-1"><i class="fas fa-map-marker-alt text-2xl"></i></span>
+                            <div>
+                                <p class="font-semibold">Ubicación</p>
+                                <p class="text-gray-400">Madrid, España</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8 flex gap-4">
+                        <a href="#"
+                            class="w-12 h-12 bg-gray-700 hover:bg-blue-600 rounded-full flex items-center justify-center transition">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                        <a href="#"
+                            class="w-12 h-12 bg-gray-700 hover:bg-blue-600 rounded-full flex items-center justify-center transition">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                        <a href="#"
+                            class="w-12 h-12 bg-gray-700 hover:bg-blue-600 rounded-full flex items-center justify-center transition">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <form class="space-y-6">
+                    <div>
+                        <label class="block text-sm font-semibold mb-2">Nombre</label>
+                        <input type="text"
+                            class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:border-blue-400 focus:outline-none transition"
+                            placeholder="Tu nombre">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold mb-2">Email</label>
+                        <input type="email"
+                            class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:border-blue-400 focus:outline-none transition"
+                            placeholder="Tu email">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold mb-2">Mensaje</label>
+                        <textarea rows="5"
+                            class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:border-blue-400 focus:outline-none transition"
+                            placeholder="Tu mensaje"></textarea>
+                    </div>
+                    <button type="submit"
+                        class="w-full px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg font-semibold transition transform hover:scale-105">
+                        Enviar Mensaje
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>
