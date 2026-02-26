@@ -11,7 +11,9 @@ INSERT INTO skills (name, level_percentage, icon_class, personal_info_id) VALUES
 ('HTML', 95, 'https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/html5.svg', 1),
 ('CSS', 90, 'https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/css3.svg', 1),
 ('JavaScript', 75, 'https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/javascript.svg', 1),
-('Angular', 70, 'https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/angular.svg', 1);
+('Angular', 70, 'https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/angular.svg', 1),
+('Docker', 70, 'https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/docker.svg', 1),
+('Git', 70, 'https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/git.svg', 1);
 
 INSERT INTO educations (degree, institution, start_date, end_date, description, personal_info_id) VALUES
 ('Ingeniería en Sistemas', 'Universidad XYZ', '2015-03-01', '2020-12-15', 'Especialización en desarrollo de software y bases de datos.', 1),

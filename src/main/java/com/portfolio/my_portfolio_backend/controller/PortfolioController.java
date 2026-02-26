@@ -14,7 +14,7 @@ import lombok.RequiredArgsConstructor;
 @Controller
 @RequiredArgsConstructor
 public class PortfolioController {
-    
+
     private final IPersonalInfoService personalInfoService;
 
     @GetMapping("/form")

@@ -16,52 +16,51 @@
 
     <main class="flex-grow flex items-center justify-center py-8 w-full">
         <div class="w-full max-w-2xl bg-gray-800 rounded-xl shadow-2xl border border-gray-700 p-8 my-10">
-            <h1 class="text-3xl font-bold text-white mb-8 border-b border-gray-700 pb-4">Añadir / Editar Proyecto</h1>
-            <form th:action="@{/projects/save}" th:object="${projectDto}" method="POST" enctype="multipart/form-data"
+            <h1 class="text-3xl font-bold text-white mb-8 border-b border-gray-700 pb-4">Añadir / Editar Habilidad</h1>
+            <form th:action="@{/skills/save}" th:object="${skillDto}" method="POST"
                 class="space-y-6">
 
                 <input type="hidden" th:field="*{id}" />
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div class="sm:col-span-2">
-                        <label class="block text-sm font-medium text-gray-300 mb-2">Título del Proyecto</label>
-                        <input name="title" type="text" id="title" th:field="*{title}"
-                            placeholder="E.g. E-Commerce Platform"
+                        <label class="block text-sm font-medium text-gray-300 mb-2">Nombre de la Habilidad</label>
+                        <input name="name" type="text" id="name" th:field="*{name}"
+                            placeholder="E.g. Java"
                             class="w-full rounded-lg border border-gray-600 px-4 py-3 bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors" />
-                        <span th:if="${#fields.hasErrors('title')}" th:errors="*{title}" class="text-red-500 text-sm mt-2"></span>
+                        <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}" class="text-red-500 text-sm mt-2"></span>
                     </div>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div class="sm:col-span-2">
-                        <label class="block text-sm font-medium text-gray-300 mb-2">Descripción</label>
-                        <textarea name="description" id="description" th:field="*{description}" rows="4"
-                            placeholder="Breve descripción de las tecnologías y el objetivo..."
-                            class="w-full rounded-lg border border-gray-600 px-4 py-3 bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"></textarea>
-                        <span th:if="${#fields.hasErrors('description')}" th:errors="*{description}" class="text-red-500 text-sm mt-2"></span>
-                    </div>
-                    <div class="sm:col-span-2">
-                        <label class="block text-sm font-medium text-gray-300 mb-2">URL del Proyecto (Opcional)</label>
-                        <input name="projectUrl" type="url" id="projectUrl" th:field="*{projectUrl}"
-                            placeholder="https://github.com/tu-usuario/proyecto"
+                        <label class="block text-sm font-medium text-gray-300 mb-2">Porcentaje de la Habilidad</label>
+                        <input name="levelPercentage" type="text" id="levelPercentage" th:field="*{levelPercentage}"
+                            placeholder="E.g. 90%"
                             class="w-full rounded-lg border border-gray-600 px-4 py-3 bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors" />
-                        <span th:if="${#fields.hasErrors('projectUrl')}" th:errors="*{projectUrl}" class="text-red-500 text-sm mt-2"></span>
+                        <span th:if="${#fields.hasErrors('levelPercentage')}" th:errors="*{levelPercentage}" class="text-red-500 text-sm mt-2"></span>
                     </div>
-                    <div
-                        class="sm:col-span-1 border border-dashed border-gray-600 rounded-lg p-4 bg-gray-700 flex flex-col justify-center">
-                        <label class="block text-sm font-medium text-gray-300 mb-2">Subir Imagen del Proyecto</label>
-                        <input name="file" type="file" id="file"
-                            class="w-full text-sm text-gray-400 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-blue-600 file:text-white hover:file:bg-blue-700 file:cursor-pointer file:transition-colors cursor-pointer" />
-                    <span th:if="${#fields.hasErrors('imageUrl')}" th:errors="*{imageUrl}" class="text-red-500 text-sm mt-2"></span>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div class="sm:col-span-2">
+                        <label class="block text-sm font-medium text-gray-300 mb-2">Icono de la Habilidad</label>
+                        <input name="iconClass" type="text" id="iconClass" th:field="*{iconClass}"
+                            placeholder="E.g. fa-brands fa-java"
+                            class="w-full rounded-lg border border-gray-600 px-4 py-3 bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors" />
+                        <span th:if="${#fields.hasErrors('iconClass')}" th:errors="*{iconClass}" class="text-red-500 text-sm mt-2"></span>
                     </div>
-                    <div class="sm:col-span-1">
-                        <label class="block text-sm font-medium text-gray-300 mb-2">ID Información Personal</label>
-                        <input name="personalInfoId" type="number" id="personalInfoId" th:field="*{personalInfoId}"
-                            placeholder="1"
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div class="sm:col-span-2">
+                        <label class="block text-sm font-medium text-gray-300 mb-2">ID de Información Personal</label>
+                        <input name="personalInfoId" type="text" id="personalInfoId" th:field="*{personalInfoId}"
+                            placeholder="E.g. 1"
                             class="w-full rounded-lg border border-gray-600 px-4 py-3 bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors" />
                         <span th:if="${#fields.hasErrors('personalInfoId')}" th:errors="*{personalInfoId}" class="text-red-500 text-sm mt-2"></span>
                     </div>
                 </div>
                 <div class="flex items-center justify-end space-x-4 pt-6 border-t border-gray-700 mt-6">
                     <!-- Botón de cancelar -->
-                    <a th:href="@{/projects}"
+                    <a th:href="@{/skills}"
                         class="text-gray-400 hover:text-white transition-colors font-medium">Cancelar</a>
                     <!-- Botón de enviar -->
                     <button type="submit"
@@ -72,7 +71,7 @@
                                 d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4">
                             </path>
                         </svg>
-                        Guardar Proyecto
+                        Guardar Habilidad
                     </button>
                 </div>
             </form>

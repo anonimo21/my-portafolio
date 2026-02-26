@@ -11,7 +11,7 @@
 <body class="bg-gray-900 text-gray-100 font-sans min-h-screen p-8">
 
     <!-- Header -->
-    <div th:replace="fragments/header :: header">
+    <div th:replace="fragments/header-admin :: header-admin">
     </div>
 
     <!-- Main Content -->
@@ -93,6 +93,11 @@
                         </tr>
                     </tbody>
                 </table>
+
+                <div th:if="${#lists.isEmpty(projects)}" class="p-8 text-center">
+                    <p class="text-gray-400">No hay proyectos registrados.</p>
+                </div>
+
             </div>
         </div>
     </div>

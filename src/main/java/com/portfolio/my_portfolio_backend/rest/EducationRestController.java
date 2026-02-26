@@ -16,15 +16,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-
-
 @RestController
 @RequestMapping("/api/education")
-public class EducationController {
+public class EducationRestController {
     
     private final IEducationService educationService;
 
-    public EducationController(IEducationService educationService) {
+    public EducationRestController(IEducationService educationService) {
         this.educationService = educationService;
     }
 

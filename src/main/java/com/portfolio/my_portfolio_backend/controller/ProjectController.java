@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.portfolio.my_portfolio_backend.dto.ProjectDto;
-import com.portfolio.my_portfolio_backend.dto.ProjectMapper;
+import com.portfolio.my_portfolio_backend.mapper.ProjectMapper;
 import com.portfolio.my_portfolio_backend.model.Project;
 import com.portfolio.my_portfolio_backend.service.FileStorageService;
 import com.portfolio.my_portfolio_backend.service.IProjectService;
@@ -33,7 +33,7 @@ public class ProjectController {
     public String getAll(Model model) {
         List<ProjectDto> projects = projectService.findAll().stream().map(ProjectMapper::toDto).toList();
         model.addAttribute("projects", projects);
-        return "projects/list";
+        return "projects/list-projects";
     }
 
     @GetMapping("/new-project")
@@ -48,16 +48,16 @@ public class ProjectController {
             BindingResult result,
             @RequestParam("file") MultipartFile file) {
 
-        if(file.isEmpty()){
+        if (file.isEmpty()) {
             result.rejectValue("imageUrl", "file.required", "La imagen es obligatoria");
         }
 
-        if(result.hasErrors()){
+        if (result.hasErrors()) {
             return "projects/form-project";
         }
 
         try {
-            //throw new Exception("Error al guardar el proyecto");
+            // throw new Exception("Error al guardar el proyecto");
             String imageUrl = fileStorageService.storeFile(file);
             projectDto.setImageUrl(imageUrl);
             Project project = ProjectMapper.toEntity(projectDto);

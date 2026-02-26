@@ -15,5 +15,5 @@ public class GlobalExceptionHandler {
         model.addAttribute("message", "Se encontraron errores de validación.");
         return "error/validation";
     }
-    
+
 }

@@ -8,9 +8,9 @@ import lombok.Setter;
 @Getter
 @Setter
 public class ValidationException extends RuntimeException {
-    
+
     private final BindingResult bindingResult;
-    
+
     public ValidationException(BindingResult bindingResult) {
         super("Error de validación, se encontraron errores: " + bindingResult.getErrorCount());
         this.bindingResult = bindingResult;
