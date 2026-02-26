@@ -5,6 +5,8 @@ INSERT INTO personal_info (first_name, last_name, title, profile_description, pr
 INSERT INTO skills (name, level_percentage, icon_class, personal_info_id) VALUES
 ('Java', 90, 'https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/java.svg', 1),
 ('Spring Boot', 85, 'https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/springboot.svg', 1),
+('PHP', 80, 'https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/php.svg', 1),
+('Laravel', 80, 'https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/laravel.svg', 1),
 ('PostgreSQL', 80, 'https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/postgresql.svg', 1),
 ('HTML', 95, 'https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/html5.svg', 1),
 ('CSS', 90, 'https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/css3.svg', 1),

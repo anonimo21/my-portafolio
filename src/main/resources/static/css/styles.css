@@ -590,6 +590,14 @@ video {
   top: 10rem;
 }
 
+.-right-24 {
+  right: -6rem;
+}
+
+.-top-24 {
+  top: -6rem;
+}
+
 .z-10 {
   z-index: 10;
 }
@@ -601,6 +609,11 @@ video {
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
+}
+
+.my-10 {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
 }
 
 .mb-12 {
@@ -649,6 +662,14 @@ video {
 
 .mr-2 {
   margin-right: 0.5rem;
+}
+
+.mb-10 {
+  margin-bottom: 2.5rem;
+}
+
+.mt-6 {
+  margin-top: 1.5rem;
 }
 
 .line-clamp-3 {
@@ -789,6 +810,10 @@ video {
   width: 2rem;
 }
 
+.w-48 {
+  width: 12rem;
+}
+
 .max-w-2xl {
   max-width: 42rem;
 }
@@ -813,12 +838,28 @@ video {
   max-width: 20rem;
 }
 
+.max-w-xl {
+  max-width: 36rem;
+}
+
+.max-w-5xl {
+  max-width: 64rem;
+}
+
+.max-w-lg {
+  max-width: 32rem;
+}
+
 .flex-1 {
   flex: 1 1 0%;
 }
 
 .flex-shrink-0 {
   flex-shrink: 0;
+}
+
+.flex-grow {
+  flex-grow: 1;
 }
 
 .transform {
@@ -913,6 +954,12 @@ video {
   margin-bottom: calc(2rem * var(--tw-space-y-reverse));
 }
 
+.space-x-4 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(1rem * var(--tw-space-x-reverse));
+  margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
 .divide-y > :not([hidden]) ~ :not([hidden]) {
   --tw-divide-y-reverse: 0;
   border-top-width: calc(1px * calc(1 - var(--tw-divide-y-reverse)));
@@ -942,6 +989,10 @@ video {
 
 .whitespace-pre-line {
   white-space: pre-line;
+}
+
+.break-words {
+  overflow-wrap: break-word;
 }
 
 .rounded-full {
@@ -988,6 +1039,10 @@ video {
   border-top-width: 1px;
 }
 
+.border-dashed {
+  border-style: dashed;
+}
+
 .border-blue-400 {
   --tw-border-opacity: 1;
   border-color: rgb(96 165 250 / var(--tw-border-opacity, 1));
@@ -1006,6 +1061,18 @@ video {
 .border-gray-700 {
   --tw-border-opacity: 1;
   border-color: rgb(55 65 81 / var(--tw-border-opacity, 1));
+}
+
+.border-red-500\/30 {
+  border-color: rgb(239 68 68 / 0.3);
+}
+
+.border-red-900\/50 {
+  border-color: rgb(127 29 29 / 0.5);
+}
+
+.border-transparent {
+  border-color: transparent;
 }
 
 .bg-blue-500 {
@@ -1063,6 +1130,15 @@ video {
 
 .bg-gray-900\/50 {
   background-color: rgb(17 24 39 / 0.5);
+}
+
+.bg-red-600 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(220 38 38 / var(--tw-bg-opacity, 1));
+}
+
+.bg-red-900\/30 {
+  background-color: rgb(127 29 29 / 0.3);
 }
 
 .bg-gradient-to-br {
@@ -1203,12 +1279,25 @@ video {
   padding-bottom: 0.25rem;
 }
 
+.py-6 {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
 .pl-5 {
   padding-left: 1.25rem;
 }
 
 .pt-20 {
   padding-top: 5rem;
+}
+
+.pb-4 {
+  padding-bottom: 1rem;
+}
+
+.pt-6 {
+  padding-top: 1.5rem;
 }
 
 .text-left {
@@ -1256,6 +1345,11 @@ video {
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
+}
+
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
 }
 
 .font-bold {
@@ -1464,6 +1558,57 @@ body {
   color: rgb(17 24 39 / var(--tw-text-opacity, 1));
 }
 
+.file\:mr-4::file-selector-button {
+  margin-right: 1rem;
+}
+
+.file\:cursor-pointer::file-selector-button {
+  cursor: pointer;
+}
+
+.file\:rounded-lg::file-selector-button {
+  border-radius: 0.5rem;
+}
+
+.file\:border-0::file-selector-button {
+  border-width: 0px;
+}
+
+.file\:bg-blue-600::file-selector-button {
+  --tw-bg-opacity: 1;
+  background-color: rgb(37 99 235 / var(--tw-bg-opacity, 1));
+}
+
+.file\:px-4::file-selector-button {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.file\:py-2::file-selector-button {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.file\:text-sm::file-selector-button {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.file\:font-semibold::file-selector-button {
+  font-weight: 600;
+}
+
+.file\:text-white::file-selector-button {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+
+.file\:transition-colors::file-selector-button {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
 .hover\:-translate-y-1:hover {
   --tw-translate-y: -0.25rem;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -1510,6 +1655,11 @@ body {
   background-color: rgb(67 56 202 / var(--tw-bg-opacity, 1));
 }
 
+.hover\:bg-gray-600:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(75 85 99 / var(--tw-bg-opacity, 1));
+}
+
 .hover\:text-blue-300:hover {
   --tw-text-opacity: 1;
   color: rgb(147 197 253 / var(--tw-text-opacity, 1));
@@ -1518,6 +1668,11 @@ body {
 .hover\:text-blue-400:hover {
   --tw-text-opacity: 1;
   color: rgb(96 165 250 / var(--tw-text-opacity, 1));
+}
+
+.hover\:text-white:hover {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
 }
 
 .hover\:underline:hover {
@@ -1530,6 +1685,11 @@ body {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
+.hover\:file\:bg-blue-700::file-selector-button:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(29 78 216 / var(--tw-bg-opacity, 1));
+}
+
 .focus\:border-blue-400:focus {
   --tw-border-opacity: 1;
   border-color: rgb(96 165 250 / var(--tw-border-opacity, 1));
@@ -1538,6 +1698,10 @@ body {
 .focus\:border-indigo-500:focus {
   --tw-border-opacity: 1;
   border-color: rgb(99 102 241 / var(--tw-border-opacity, 1));
+}
+
+.focus\:border-transparent:focus {
+  border-color: transparent;
 }
 
 .focus\:outline-none:focus {
@@ -1556,8 +1720,22 @@ body {
   --tw-ring-color: rgb(99 102 241 / var(--tw-ring-opacity, 1));
 }
 
+.focus\:ring-blue-500:focus {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(59 130 246 / var(--tw-ring-opacity, 1));
+}
+
+.focus\:ring-gray-500:focus {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(107 114 128 / var(--tw-ring-opacity, 1));
+}
+
 .focus\:ring-offset-2:focus {
   --tw-ring-offset-width: 2px;
+}
+
+.focus\:ring-offset-gray-900:focus {
+  --tw-ring-offset-color: #111827;
 }
 
 .group:hover .group-hover\:scale-110 {
@@ -1572,6 +1750,14 @@ body {
 }
 
 @media (min-width: 640px) {
+  .sm\:col-span-1 {
+    grid-column: span 1 / span 1;
+  }
+
+  .sm\:col-span-2 {
+    grid-column: span 2 / span 2;
+  }
+
   .sm\:mt-0 {
     margin-top: 0px;
   }

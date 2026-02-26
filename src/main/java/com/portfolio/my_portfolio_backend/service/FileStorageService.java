@@ -37,7 +37,7 @@ public class FileStorageService {
         Files.copy(file.getInputStream(), filePath);
 
         //Retorno de la url relativa
-        return "/img/projects/" + fileName;
+        return "img/projects/" + fileName;
     }
 
 }
