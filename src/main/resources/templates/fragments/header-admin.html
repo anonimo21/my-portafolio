@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 
 <head>
     <meta charset="UTF-8">
@@ -26,6 +26,12 @@
                     <li><a th:href="@{/experience}" class="hover:text-blue-400 transition">Experiencia</a></li>
                     <li><a th:href="@{/projects}" class="hover:text-blue-400 transition">Proyectos</a></li>
                     <li><a th:href="@{/skills}" class="hover:text-blue-400 transition">Skills</a></li>
+                    <li sec:authorize="isAuthenticated()">
+                        <form th:action="@{/logout}" method="post" class="inline">
+                            <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+                            <button type="submit" class="hover:text-blue-400 transition cursor-pointer">Logout</button>
+                        </form>
+                    </li>
                 </ul>
 
                 <button class="md:hidden text-gray-300">

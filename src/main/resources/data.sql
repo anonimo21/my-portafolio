@@ -26,3 +26,6 @@ INSERT INTO experiences (job_title, company_name, start_date, end_date, descript
 INSERT INTO projects (title, description, image_url, project_url, personal_info_id) VALUES
 ('Proyecto 1', 'Descripción del proyecto 1', 'img/projects/project1.jpg', 'https://github.com/juanperez/project1', 1),
 ('Proyecto 2', 'Descripción del proyecto 2', 'img/projects/project2.jpg', 'https://github.com/juanperez/project2', 1);
+
+INSERT INTO users (username, password, enabled) VALUES
+('admin', '$2a$10$Cr.ssYh99.mATADA1nW8M.BanJoWFukH35covOcJPpzWS49HotqHW', true);

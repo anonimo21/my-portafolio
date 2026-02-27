@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 
 <head>
     <meta charset="UTF-8">
@@ -27,6 +27,13 @@
                     <li><a th:href="@{/#experiencia}" class="hover:text-blue-400 transition">Experiencia</a></li>
                     <li><a th:href="@{/#projects}" class="hover:text-blue-400 transition">Proyectos</a></li>
                     <li><a th:href="@{/#contacto}" class="hover:text-blue-400 transition">Contacto</a></li>
+                    <li sec:authorize="!isAuthenticated()">
+                        <a th:href="@{/login}"
+                           class="inline-flex items-center px-4 py-1.5 bg-gradient-to-r from-blue-500 via-cyan-400 to-purple-500 text-sm font-semibold text-white rounded-full shadow-lg shadow-blue-500/40 hover:from-blue-600 hover:via-cyan-500 hover:to-purple-600 transition-all duration-200 transform hover:scale-105">
+                            Login
+                        </a>
+                    </li>
+                    <li sec:authorize="isAuthenticated()"><a th:href="@{/education}" class="hover:text-blue-400 transition">Admin</a></li>
                 </ul>
 
                 <button class="md:hidden text-gray-300">
