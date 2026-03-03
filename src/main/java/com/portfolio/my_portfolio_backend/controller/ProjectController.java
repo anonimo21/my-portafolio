@@ -1,6 +1,7 @@
 package com.portfolio.my_portfolio_backend.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -8,6 +9,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.portfolio.my_portfolio_backend.dto.ProjectDto;
 import com.portfolio.my_portfolio_backend.mapper.ProjectMapper;
@@ -19,6 +21,7 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
@@ -57,7 +60,6 @@ public class ProjectController {
         }
 
         try {
-            // throw new Exception("Error al guardar el proyecto");
             String imageUrl = fileStorageService.storeFile(file);
             projectDto.setImageUrl(imageUrl);
             Project project = ProjectMapper.toEntity(projectDto);
@@ -66,6 +68,30 @@ public class ProjectController {
         } catch (Exception e) {
             return "error-page";
         }
+    }
+
+    @GetMapping("/edit/{id}")
+    public String showEditForm(@PathVariable Long id, Model model) {
+        Optional<Project> projectOptional = projectService.findById(id);
+        if (projectOptional.isPresent()) {
+            ProjectDto projectDto = ProjectMapper.toDto(projectOptional.get());
+            model.addAttribute("projectDto", projectDto);
+            return "projects/form-project";
+        } else {
+            model.addAttribute("errorMessage", "No se encontro el proyecto con id: " + id);
+            return "redirect:/projects";
+        }
+    }
+
+    @PostMapping("/delete/{id}")
+    public String deleteProject(@PathVariable Long id, RedirectAttributes redirectAttributes) {
+        try {
+            projectService.deleteById(id);
+            redirectAttributes.addFlashAttribute("message", "Proyecto eliminado correctamente");
+        } catch (Exception e) {
+            redirectAttributes.addFlashAttribute("error", "No se pudo eliminar el proyecto con id: " + id);
+        }
+        return "redirect:/projects";
     }
 
 }
