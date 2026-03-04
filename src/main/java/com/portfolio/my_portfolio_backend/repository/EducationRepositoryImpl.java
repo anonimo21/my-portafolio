@@ -87,7 +87,7 @@ public class EducationRepositoryImpl implements IEducationRepository {
 
     @Override
     public List<Education> findAll() {
-        String sql = "SELECT id, degree, institution, start_date, end_date, description, personal_info_id FROM educations ORDER BY id DESC";
+        String sql = "SELECT id, degree, institution, start_date, end_date, description, personal_info_id FROM educations ORDER BY id DESC"; 
         return jdbcTemplate.query(sql, educationRowMapper);
     }
 

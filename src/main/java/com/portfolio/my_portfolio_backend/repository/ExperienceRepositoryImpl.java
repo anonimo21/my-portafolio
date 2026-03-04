@@ -36,7 +36,7 @@ public class ExperienceRepositoryImpl implements IExperienceRepository {
 
     @Override
     public List<Experience> findAll() {
-        String sql = "SELECT id, job_title, company_name, start_date, end_date, description, personal_info_id FROM experiences ORDER BY id DESC";
+        String sql = "SELECT id, job_title, company_name, start_date, end_date, description, personal_info_id FROM experiences ORDER BY id DESC"; 
         return jdbcTemplate.query(sql, experienceRowMapper);
     }
 
