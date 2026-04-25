@@ -5,6 +5,15 @@
 		},
 		{
 			"path": "../../../../../../../../Users/edermontiel/Desktop/spring boot/CodersFree/prueba"
+		},
+		{
+			"path": "../angular-cors-main"
+		},
+		{
+			"path": "../api-eventos"
 		}
-	]
+	],
+	"settings": {
+		"java.configuration.updateBuildConfiguration": "interactive"
+	}
 }
